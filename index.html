@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Your Name — Personal Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa4b2;
+      --accent:#4f46e5;
+      --glass: rgba(255,255,255,0.03);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;color:#e6eef6;background:linear-gradient(180deg,#071021 0%, #071428 100%);}
+    .container{max-width:1000px;margin:36px auto;padding:28px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6);}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:20px}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px;transition:all .18s}
+    nav a:hover{color:white;background:var(--glass);transform:translateY(-2px)}
+
+    .hero{display:grid;grid-template-columns:160px 1fr;gap:24px;align-items:center;margin-top:22px}
+    .profile{width:160px;height:160px;border-radius:14px;overflow:hidden;flex:none;background:#0b1220;display:flex;align-items:center;justify-content:center}
+    .profile img{width:100%;height:100%;object-fit:cover;display:block}
+    /* fallback when no image is provided: initials */
+    .initials{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;color:white;background:linear-gradient(135deg, #2563eb, #7c3aed)}
+
+    .about h1{margin:0;font-size:28px;color:#fff}
+    .about p{color:var(--muted);line-height:1.5;margin-top:10px}
+
+    .sections{display:grid;grid-template-columns:1fr;gap:18px;margin-top:28px}
+    section.card{background:linear-gradient(180deg, rgba(255,255,255,0.012), rgba(255,255,255,0.008));padding:18px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+    section.card h2{margin:0 0 8px 0;color:#eaf0ff}
+    section.card p{margin:0;color:var(--muted)}
+
+    .projects-list{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+    .project{padding:12px;border-radius:8px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));display:flex;justify-content:space-between;align-items:center}
+    .project .meta{color:var(--muted);font-size:14px}
+
+    footer{margin-top:28px;text-align:center;color:var(--muted);font-size:13px}
+
+    @media (max-width:720px){
+      .hero{grid-template-columns:120px 1fr}
+      header{flex-direction:column;align-items:flex-start}
+      nav ul{flex-wrap:wrap}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">ML</div>
+        <div>
+          <div style="font-weight:700;color:#fff">Your Name</div>
+          <div style="font-size:12px;color:var(--muted)">Web Developer • Designer • Student</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#personal">Personal</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="profile">
+          <!-- Replace the src value with the path to your photo, e.g. assets/profile.jpg -->
+          <img src="assets/profile.jpg" alt="Profile picture placeholder" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="initials" style="display:none">YL</div>
+        </div>
+
+        <div class="about">
+          <h1>Hi, I'm Your Name</h1>
+          <p>
+            A short description about yourself goes here. Mention your role, interests, and a quick summary of what you do — for example: "I'm a web developer focused on building accessible, performant interfaces. I enjoy working on open-source projects and learning new technologies." Replace this placeholder with 2–3 sentences about you.
+          </p>
+        </div>
+      </div>
+
+      <div class="sections">
+        <section id="education" class="card">
+          <h2>Education</h2>
+          <p class="muted">Add your degrees, institutions and years here. Example:</p>
+          <ul style="color:var(--muted);margin-top:10px">
+            <li><strong>B.Sc. Computer Science</strong>, University Name — 2021–2024</li>
+            <li><strong>High School Diploma</strong>, School Name — 2018–2021</li>
+          </ul>
+        </section>
+
+        <section id="projects" class="card">
+          <h2>Projects</h2>
+          <p class="muted">A few highlights. Replace with links and descriptions for your work.</p>
+          <div class="projects-list">
+            <div class="project">
+              <div>
+                <div style="font-weight:600;color:#fff">Project One</div>
+                <div class="meta">Short description or tech stack</div>
+              </div>
+              <div style="font-size:12px;color:var(--muted)">2024</div>
+            </div>
+
+            <div class="project">
+              <div>
+                <div style="font-weight:600;color:#fff">Project Two</div>
+                <div class="meta">Short description or tech stack</div>
+              </div>
+              <div style="font-size:12px;color:var(--muted)">2023</div>
+            </div>
+          </div>
+        </section>
+
+        <section id="personal" class="card">
+          <h2>Personal</h2>
+          <p class="muted">Share hobbies, languages, volunteering or anything personal you want visitors to know.</p>
+          <ul style="color:var(--muted);margin-top:10px">
+            <li>Hobbies: Photography, Cycling, Reading</li>
+            <li>Languages: English (fluent), German (native)</li>
+            <li>Open to collaboration and freelance work — replace with your contact details if desired.</li>
+          </ul>
+        </section>
+      </div>
+
+    </main>
+
+    <footer>
+      © <span id="year"></span> Your Name — Built with HTML & CSS
+    </footer>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        const el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+  </script>
+</body>
+</html>
