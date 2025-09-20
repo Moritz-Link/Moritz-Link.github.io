@@ -1,7 +1,15 @@
-:root{--bg:#071428;--card:#0b1220;--muted:#9aa4b2;--accent:#4f46e5}
+
+:root{
+  --bg: #f7fafc; /* light gray */
+  --card: #ffffff; /* white cards */
+  --muted: #6b7280; /* gray-500 */
+  --accent: #2563eb; /* blue-600 */
+  --brand: #10b981; /* emerald */
+}
+
 body{
-  background:linear-gradient(180deg,#071021 0%, #071428 100%);
-  color:#e6eef6;
+  background:linear-gradient(180deg,#ffffff 0%, #f1f5f9 100%);
+  color:#0f172a;
   font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
@@ -10,26 +18,61 @@ body{
   height:160px;
   border-radius:12px;
   object-fit:cover;
-  background:#0b1220;
+  background:var(--card);
   display:block;
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
 }
 
 .initials{
   width:160px;
   height:160px;
   border-radius:12px;
-  background:linear-gradient(135deg,var(--accent),#06b6d4);
+  background:linear-gradient(135deg,var(--brand),var(--accent));
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:48px;
   color:#fff;
+  box-shadow:0 6px 18px rgba(16,24,40,0.06);
 }
 
 .card-glass{
-  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-  border:1px solid rgba(255,255,255,0.03);
+  background:var(--card);
+  border:1px solid rgba(15,23,42,0.04);
+  box-shadow:0 6px 24px rgba(15,23,42,0.04);
 }
 
-a.nav-link{color:rgba(255,255,255,0.85)}
+/* Navbar styled as pill buttons */
+.navbar {
+  background: transparent;
+}
+.nav-pill {
+  display: inline-flex;
+  gap: 10px;
+}
+.nav-pill .nav-link{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  background:transparent;
+  color:rgba(15,23,42,0.85);
+  border:1px solid transparent;
+  transition:all .18s ease;
+  font-weight:600;
+}
+.nav-pill .nav-link:hover{
+  background:rgba(37,99,235,0.08);
+  transform:translateY(-2px);
+  box-shadow:0 6px 14px rgba(16,24,40,0.04);
+  color:var(--accent);
+}
+.nav-pill .nav-link:focus{outline:none;box-shadow:0 0 0 4px rgba(37,99,235,0.08)}
+.nav-pill .nav-link.active{
+  background:var(--accent);
+  color:white !important;
+  transform:none;
+}
+
+/* keep footer muted */
+footer{color:var(--muted)}
 footer{color:var(--muted)}

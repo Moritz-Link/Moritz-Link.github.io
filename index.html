@@ -14,22 +14,22 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
-          <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width:44px;height:44px;font-weight:700">ML</div>
-          <div class="ms-2">
-            <div style="font-weight:700">Your Name</div>
-            <small class="text-muted">Web Developer • Designer</small>
-          </div>
-        </a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
-            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="personal.html">Personal</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="education.html">Education <span class="visually-hidden">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personal.html">Personal</a>
+            </li>
           </ul>
         </div>
       
@@ -43,61 +43,31 @@
       </div>
 
       
-      <div class="row mt-5">
-        <div class="col-lg-8">
-          <section id="projects" class="mb-4 card card-glass p-4">
-            <h2 class="h5">Projects</h2>
-            <p class="text-muted">A few highlights. Replace with links and descriptions for your work.</p>
+      <main class="container my-5">
+        <div class="row align-items-center g-4">
+          <div class="col-md-auto">
+            <img src="assets/profile.jpg" alt="Profile" class="profile-img" onerror="this.style.display='none';document.getElementById('initials').style.display='flex'">
+            <div id="initials" class="initials" style="display:none">YL</div>
+          </div>
 
-            <div class="list-group list-group-flush">
-              <div class="list-group-item bg-transparent d-flex justify-content-between align-items-start p-3 rounded-3">
-                <div>
-                  <div class="fw-bold">Project One</div>
-                  <div class="text-muted small">Short description — React, Node.js</div>
-                </div>
-                <div class="text-muted small">2024</div>
-              </div>
+          <div class="col">
+            <h1 class="mb-1">Hi, I'm Your Name</h1>
+            <p class="lead text-muted">I build intelligent agents and scalable learning systems.</p>
 
-              <div class="list-group-item bg-transparent d-flex justify-content-between align-items-start p-3 rounded-3">
-                <div>
-                  <div class="fw-bold">Project Two</div>
-                  <div class="text-muted small">Short description — Python, ML</div>
-                </div>
-                <div class="text-muted small">2023</div>
-              </div>
+            <div class="card card-glass p-4 mt-4">
+              <h2 class="h5 mb-2">Currently</h2>
+              <p class="mb-1">I am a reinforcement learning expert working on algorithms, simulation environments and practical deployments.</p>
+              <p class="text-muted small mb-0">Interested in RL research, model-based RL, policy optimization, and real-world applications.</p>
             </div>
-          </section>
 
-          <section id="personal" class="card card-glass p-4 mb-4">
-            <h2 class="h5">Personal</h2>
-            <p class="text-muted">Share hobbies, languages, volunteering or anything personal you want visitors to know.</p>
-            <ul class="text-muted">
-              <li>Hobbies: Photography, Cycling, Reading</li>
-              <li>Languages: English (fluent), German (native)</li>
-              <li>Open to collaboration and freelance work — replace with your contact details if desired.</li>
-            </ul>
-          </section>
+            <div class="mt-4">
+              <a href="projects.html" class="btn btn-primary me-2">Projects</a>
+              <a href="education.html" class="btn btn-outline-secondary me-2">Education</a>
+              <a href="personal.html" class="btn btn-outline-secondary">Personal</a>
+            </div>
+          </div>
         </div>
-
-        <aside class="col-lg-4">
-          <section id="education" class="card card-glass p-4 mb-4">
-            <h2 class="h6">Education</h2>
-            <p class="text-muted mb-2">Add your degrees, institutions and years here.</p>
-            <ul class="text-muted mb-0">
-              <li><strong>B.Sc. Computer Science</strong>, University Name — 2021–2024</li>
-              <li><strong>High School Diploma</strong>, School Name — 2018–2021</li>
-            </ul>
-          </section>
-
-          <section class="card card-glass p-4">
-            <h2 class="h6">Quick Contact</h2>
-            <p class="text-muted small mb-1">Replace with email or links</p>
-            <p class="mb-0"><a href="mailto:you@example.com" class="text-decoration-none text-white">you@example.com</a></p>
-          </section>
-        </aside>
-      </div>
-
-    </main>
+      </main>
 
     <footer class="py-4">
       <div class="container text-center text-muted">© <span id="year"></span> Your Name — Built with Bootstrap</div>
@@ -117,6 +87,15 @@
           const el = document.getElementById(targetId);
           if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
         });
+      });
+
+      // Highlight active nav link
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(a=>{
+        const href = a.getAttribute('href');
+        if(href === location.pathname.split('/').pop() || (href === 'index.html' && location.pathname.split('/').pop() === '')){
+          a.classList.add('active');
+        }
       });
     </script>
   </body>
