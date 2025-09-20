@@ -75,4 +75,12 @@ body{
 
 /* keep footer muted */
 footer{color:var(--muted)}
+
+/* Homepage nav buttons */
+.nav-btn{
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:600;
+}
+.nav-btn:hover{transform:translateY(-2px);}
 footer{color:var(--muted)}
