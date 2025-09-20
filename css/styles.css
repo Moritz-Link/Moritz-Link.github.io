@@ -43,6 +43,13 @@ body{
   box-shadow:0 6px 24px rgba(15,23,42,0.04);
 }
 
+/* Hero image sizing */
+.hero-img{ max-width:420px; width:100%; height:auto; }
+
+/* debug helpers to visually confirm the two-column layout (remove later) */
+.hero-text{ background: rgba(16,185,129,0.06); padding: 8px; border-radius:8px; }
+.hero-image{ background: rgba(16,185,129,0.02); padding: 8px; }
+
 /* Navbar styled as pill buttons */
 .navbar {
   background: rgba(255,255,255,0.6); /* subtle translucent background */
@@ -60,6 +67,8 @@ body{ padding-top: calc(var(--nav-height) + 8px); }
   display: inline-flex;
   gap: 10px;
 }
+.nav-pill, .nav-pill ul{ list-style: none; margin: 0; padding: 0; }
+.nav-pill .nav-item{ display: inline-block; }
 .nav-pill .nav-link{
   display:inline-block;
   padding:8px 14px;
@@ -82,6 +91,11 @@ body{ padding-top: calc(var(--nav-height) + 8px); }
   color:white !important;
   transform:none;
 }
+
+/* Homepage: right aligned navbar variant */
+.navbar-right .navbar-brand{ display: none; }
+.navbar-right .nav-pill{ margin-left: auto; }
+.navbar-right .nav-pill .nav-link{ padding-left:12px; padding-right:12px; }
 
 /* keep footer muted */
 footer{color:var(--muted)}

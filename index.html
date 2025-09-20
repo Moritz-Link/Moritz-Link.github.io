@@ -6,7 +6,7 @@
     <title>Your Name — Personal Website</title>
 
     <!-- Bootstrap CSS (CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa6mY5Y9gq2QvK0G6U5Y1q6b6bY1n1Jf1qz1z1z1z1z1z1" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Project styles -->
     <link rel="stylesheet" href="css/styles.css">
   </head>
@@ -17,20 +17,26 @@
       
       <main class="container my-5">
         <div class="row align-items-center">
-          <div class="col-md-7 order-md-1">
-            <h1 class="display-4 fw-bold mb-2">Moritz Link</h1>
-            <p class="lead text-muted fs-5">Reinforcement learning expert — I design and deploy RL algorithms, simulation environments and production-ready learning systems.</p>
+          <!-- Left: description -->
+          <div class="col-lg-6 col-md-7">
+            <section class="hero-text">
+              <h1 class="display-4 fw-bold mb-2">Moritz Link</h1>
+              <p class="lead text-muted fs-5">Reinforcement learning expert — I design and deploy RL algorithms, simulation environments and production-ready learning systems.</p>
 
-            <div class="card card-glass p-4 mt-5">
-              <h2 class="h5 mb-2">Currently</h2>
-              <p class="mb-1">I am a reinforcement learning expert working on algorithms, simulation environments and practical deployments.</p>
-              <p class="text-muted small mb-0">Interested in RL research, model-based RL, policy optimization, and real-world applications.</p>
-            </div>
+              <div class="card card-glass p-4 mt-5">
+                <h2 class="h5 mb-2">Currently</h2>
+                <p class="mb-1">I am a reinforcement learning expert working on algorithms, simulation environments and practical deployments.</p>
+                <p class="text-muted small mb-0">Interested in RL research, model-based RL, policy optimization, and real-world applications.</p>
+              </div>
+            </section>
           </div>
 
-          <div class="col-md-5 text-center order-md-2">
-            <img src="assets/profile.jpg" alt="Profile" class="img-fluid rounded-3 shadow-lg" onerror="this.style.display='none';document.getElementById('initials').style.display='flex'">
-            <div id="initials" class="initials mt-3" style="display:none">YL</div>
+          <!-- Right: image -->
+          <div class="col-lg-6 col-md-5 text-center">
+            <section class="hero-image">
+              <img src="assets/profile.jpg" alt="Profile" class="hero-img img-fluid rounded-3 shadow-lg" onerror="this.style.display='none';document.getElementById('initials').style.display='flex'">
+              <div id="initials" class="initials mt-3" style="display:none">YL</div>
+            </section>
           </div>
         </div>
       </main>
@@ -40,7 +46,7 @@
     </footer>
 
     <!-- Bootstrap JS (CDN) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoYz1H9QmK9QbsQ1Zf6q3QZ3QZ3QZ3QZ3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
       // Current year
@@ -81,12 +87,17 @@
             container.appendChild(btnWrap);
           }
         }
+        // apply right-align variant if requested
+        if(options.rightAlign){
+          const navEl = ph.querySelector('.navbar');
+          if(navEl) navEl.classList.add('navbar-right');
+        }
         // active states
         const navLinks2 = document.querySelectorAll('.nav-link');
         navLinks2.forEach(a=>{ const href = a.getAttribute('href'); if(href === location.pathname.split('/').pop() || (href === 'index.html' && location.pathname.split('/').pop() === '')){ a.classList.add('active'); a.setAttribute('aria-current','page'); } });
         const navBtns = document.querySelectorAll('.nav-btn'); navBtns.forEach(b=>{ try{ const href = b.getAttribute('href').split('/').pop(); if(href === location.pathname.split('/').pop()) b.classList.replace('btn-outline-primary','btn-primary'); }catch(e){} });
-      }
-      loadNavbar('navbar-placeholder', {buttonMode:true});
+  }
+  loadNavbar('navbar-placeholder', {buttonMode:false, rightAlign:true});
     </script>
   </body>
 </html>
