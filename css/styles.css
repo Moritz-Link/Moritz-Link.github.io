@@ -1,0 +1,35 @@
+:root{--bg:#071428;--card:#0b1220;--muted:#9aa4b2;--accent:#4f46e5}
+body{
+  background:linear-gradient(180deg,#071021 0%, #071428 100%);
+  color:#e6eef6;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.profile-img{
+  width:160px;
+  height:160px;
+  border-radius:12px;
+  object-fit:cover;
+  background:#0b1220;
+  display:block;
+}
+
+.initials{
+  width:160px;
+  height:160px;
+  border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),#06b6d4);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:48px;
+  color:#fff;
+}
+
+.card-glass{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+}
+
+a.nav-link{color:rgba(255,255,255,0.85)}
+footer{color:var(--muted)}

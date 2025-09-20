@@ -7,16 +7,8 @@
 
     <!-- Bootstrap CSS (CDN) -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUa6mY5Y9gq2QvK0G6U5Y1q6b6bY1n1Jf1qz1z1z1z1z1z1" crossorigin="anonymous">
-
-    <style>
-      :root{--bg:#071428;--card:#0b1220;--muted:#9aa4b2;--accent:#4f46e5}
-      body{background:linear-gradient(180deg,#071021 0%, #071428 100%);color:#e6eef6;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
-      .profile-img{width:160px;height:160px;border-radius:12px;object-fit:cover;background:#0b1220;display:block}
-      .initials{width:160px;height:160px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;font-size:48px;color:#fff}
-      .card-glass{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);}
-      a.nav-link{color:rgba(255,255,255,0.85)}
-      footer{color:var(--muted)}
-    </style>
+    <!-- Project styles -->
+    <link rel="stylesheet" href="css/styles.css">
   </head>
   <body>
 
@@ -35,24 +27,12 @@
 
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-            <li class="nav-item"><a class="nav-link" href="#personal">Personal</a></li>
+            <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>
+            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="personal.html">Personal</a></li>
           </ul>
         </div>
-      </div>
-    </nav>
-
-    <main class="container my-5">
-      <div class="row g-4 align-items-center">
-        <div class="col-auto">
-          <!-- Profile image placeholder: replace with your photo at assets/profile.jpg -->
-          <img src="assets/profile.jpg" alt="Profile picture placeholder" class="profile-img shadow-sm" onerror="this.style.display='none';document.getElementById('initials').style.display='flex'">
-          <div id="initials" class="initials" style="display:none">YL</div>
-        </div>
-
-        <div class="col">
-          <h1 class="mb-1">Hi, I'm Your Name</h1>
+      
           <p class="lead text-muted">I'm a web developer focused on building accessible, performant interfaces. I enjoy open-source, designing simple UIs and learning new technologies. Replace this text with a short 2–3 sentence bio about you.</p>
 
           <div class="mt-3">
