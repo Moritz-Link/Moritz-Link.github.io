@@ -16,22 +16,26 @@
     <div id="navbar-placeholder"></div>
       
       <main class="container my-5">
-        <div class="row align-items-center g-4">
-          <div class="col-md-auto">
-            <img src="assets/profile.jpg" alt="Profile" class="profile-img" onerror="this.style.display='none';document.getElementById('initials').style.display='flex'">
-            <div id="initials" class="initials" style="display:none">YL</div>
-          </div>
+        <div class="row align-items-center">
+          <div class="col-md-7 order-md-1">
+            <h1 class="display-4 fw-bold mb-2">Moritz Link</h1>
+            <p class="lead text-muted fs-5">Reinforcement learning expert — I design and deploy RL algorithms, simulation environments and production-ready learning systems.</p>
 
-          <div class="col">
-            <h1 class="mb-1">Hi, I'm Moritz Link</h1>
-            <p class="lead text-muted">I build intelligent agents and scalable learning systems.</p>
+            <div class="mt-4 d-flex gap-2">
+              <a href="projects.html" class="btn btn-primary btn-lg">Projects</a>
+              <a href="contact.html" class="btn btn-outline-secondary btn-lg">Contact</a>
+            </div>
 
-            <div class="card card-glass p-4 mt-4">
+            <div class="card card-glass p-4 mt-5">
               <h2 class="h5 mb-2">Currently</h2>
               <p class="mb-1">I am a reinforcement learning expert working on algorithms, simulation environments and practical deployments.</p>
               <p class="text-muted small mb-0">Interested in RL research, model-based RL, policy optimization, and real-world applications.</p>
             </div>
+          </div>
 
+          <div class="col-md-5 text-center order-md-2">
+            <img src="assets/profile.jpg" alt="Profile" class="img-fluid rounded-3 shadow-lg" onerror="this.style.display='none';document.getElementById('initials').style.display='flex'">
+            <div id="initials" class="initials mt-3" style="display:none">YL</div>
           </div>
         </div>
       </main>

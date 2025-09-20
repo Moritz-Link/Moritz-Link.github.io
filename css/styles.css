@@ -46,6 +46,10 @@ body{
 .navbar {
   background: transparent;
 }
+.navbar{
+  position:relative;
+  z-index:1050; /* ensure navbar floats above page content */
+}
 .nav-pill {
   display: inline-flex;
   gap: 10px;
