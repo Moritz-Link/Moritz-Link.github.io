@@ -21,11 +21,6 @@
             <h1 class="display-4 fw-bold mb-2">Moritz Link</h1>
             <p class="lead text-muted fs-5">Reinforcement learning expert — I design and deploy RL algorithms, simulation environments and production-ready learning systems.</p>
 
-            <div class="mt-4 d-flex gap-2">
-              <a href="projects.html" class="btn btn-primary btn-lg">Projects</a>
-              <a href="contact.html" class="btn btn-outline-secondary btn-lg">Contact</a>
-            </div>
-
             <div class="card card-glass p-4 mt-5">
               <h2 class="h5 mb-2">Currently</h2>
               <p class="mb-1">I am a reinforcement learning expert working on algorithms, simulation environments and practical deployments.</p>
@@ -41,7 +36,7 @@
       </main>
 
     <footer class="py-4">
-      <div class="container text-center text-muted">© <span id="year"></span> Your Name — Built with Bootstrap</div>
+      <div class="container text-center text-muted">© <span id="year"></span> Moritz Link</div>
     </footer>
 
     <!-- Bootstrap JS (CDN) -->
@@ -73,7 +68,7 @@
       // reuse the shared loader with buttonMode enabled on the homepage
       async function loadNavbar(placeholderId, options={buttonMode:false}){
         const ph = document.getElementById(placeholderId);
-        const fallback = `<!-- fallback navbar -->\n<nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">\n  <div class="container">\n    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">\n      <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width:44px;height:44px;font-weight:700">ML</div>\n      <div class="ms-2">\n        <div style="font-weight:700">Your Name</div>\n        <small class="text-muted">Web Developer • Designer</small>\n      </div>\n    </a>\n    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">\n      <span class="navbar-toggler-icon"></span>\n    </button>\n    <div class="collapse navbar-collapse" id="mainNav">\n      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">\n        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>\n        <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>\n        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>\n        <li class="nav-item"><a class="nav-link" href="personal.html">Personal</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>`;
+  const fallback = `<!-- fallback navbar -->\n<nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">\n  <div class="container">\n    <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">\n      <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center" style="width:44px;height:44px;font-weight:700">ML</div>\n      <div class="ms-2 d-none d-lg-block">\n        <div style="font-weight:700">Moritz Link</div>\n        <small class="text-muted">Reinforcement Learning</small>\n      </div>\n    </a>\n    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">\n      <span class="navbar-toggler-icon"></span>\n    </button>\n    <div class="collapse navbar-collapse" id="mainNav">\n      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 nav-pill">\n        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>\n        <li class="nav-item"><a class="nav-link" href="education.html">Education</a></li>\n        <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>\n        <li class="nav-item"><a class="nav-link" href="personal.html">Personal</a></li>\n        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>\n      </ul>\n    </div>\n  </div>\n</nav>`;
         try{ const resp = await fetch('navbar.html'); if(!resp.ok) throw new Error('fetch failed'); const html = await resp.text(); ph.innerHTML = html; }catch(e){ ph.innerHTML = fallback; }
         if(options.buttonMode){
           const container = ph.querySelector('.collapse');

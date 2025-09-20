@@ -5,6 +5,7 @@
   --muted: #6b7280; /* gray-500 */
   --accent: #2563eb; /* blue-600 */
   --brand: #10b981; /* emerald */
+  --nav-height: 72px;
 }
 
 body{
@@ -44,12 +45,17 @@ body{
 
 /* Navbar styled as pill buttons */
 .navbar {
-  background: transparent;
+  background: rgba(255,255,255,0.6); /* subtle translucent background */
+  backdrop-filter: blur(6px);
 }
 .navbar{
-  position:relative;
-  z-index:1050; /* ensure navbar floats above page content */
+  position: sticky;
+  top: 0;
+  z-index: 1100; /* ensure navbar floats above page content */
 }
+
+/* reserve space so sticky navbar doesn't overlap content */
+body{ padding-top: calc(var(--nav-height) + 8px); }
 .nav-pill {
   display: inline-flex;
   gap: 10px;
