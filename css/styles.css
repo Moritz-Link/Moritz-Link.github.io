@@ -98,6 +98,53 @@ body{ padding-top: calc(var(--nav-height) + 8px); }
 .navbar-right .nav-pill{ margin-left: auto; }
 .navbar-right .nav-pill .nav-link{ padding-left:12px; padding-right:12px; }
 
+/* Ensure brand and toggler remain visible on small screens */
+@media (max-width: 900px){
+  .navbar-right .navbar-brand{ display: flex; }
+  .navbar-toggler{ display: block; }
+  /* When collapsed, ensure the menu displays as a block panel */
+  .navbar-collapse.collapse{
+    display: none; /* default hidden */
+  }
+  .navbar-collapse.collapse.show{
+    display: block;
+  }
+}
+
+/* Make the toggler clearly visible regardless of Bootstrap SVG icon color
+   This creates a simple 3-bar hamburger using pseudo-elements so it contrasts
+   with translucent backgrounds (use var(--accent) to match theme) */
+.navbar-toggler{
+  border: 1px solid rgba(15,23,42,0.06);
+  background: rgba(255,255,255,0.9);
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.navbar-toggler:focus{ box-shadow: 0 0 0 4px rgba(37,99,235,0.08); outline:none; }
+.navbar-toggler-icon{
+  /* remove Bootstrap SVG if present */
+  background-image: none !important;
+  display: inline-block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--accent);
+  position: relative;
+}
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background-color: var(--accent);
+}
+.navbar-toggler-icon::before{ top: -7px; }
+.navbar-toggler-icon::after{ top: 7px; }
+
+/* ensure toggler sits on top of translucent navbar */
+.navbar-toggler{ z-index: 1200; }
+
 /* keep footer muted */
 footer{color:var(--muted)}
 
