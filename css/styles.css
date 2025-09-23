@@ -148,6 +148,22 @@ body{ padding-top: calc(var(--nav-height) + 8px); }
 /* keep footer muted */
 footer{color:var(--muted)}
 
+/* Compact navbar adjustments when toggler/menu used (mobile) */
+@media (max-width: 900px) {
+  /* smaller brand avatar */
+  .navbar-brand img{ width:32px; height:32px; border-radius:6px; }
+
+  /* reduce nav-link border thickness and padding for compactness */
+  .nav-pill .nav-link{
+    padding:6px 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(15,23,42,0.06);
+    border-radius:6px;
+    font-weight:600;
+  }
+}
+
 /* Homepage nav buttons */
 .nav-btn{
   padding:8px 14px;
