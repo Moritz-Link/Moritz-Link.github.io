@@ -4,7 +4,8 @@
   --card: #ffffff; /* white cards */
   --muted: #6b7280; /* gray-500 */
   --accent: #2563eb; /* blue-600 */
-  --brand: #10b981; /* emerald */
+  --brand: #1e2623; /* emerald */
+  --hero: #ffffff;
   --nav-height: 72px;
 }
 
@@ -47,7 +48,7 @@ body{
 .hero-img{ max-width:420px; width:100%; height:auto; }
 
 /* debug helpers to visually confirm the two-column layout (remove later) */
-.hero-text{ background: rgba(16,185,129,0.06); padding: 8px; border-radius:8px; }
+.hero-text{ background: var(--hero); padding: 8px; border-radius:8px; }
 .hero-image{ background: rgba(16,185,129,0.02); padding: 8px; }
 
 /* Navbar styled as pill buttons */
